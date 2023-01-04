@@ -9,6 +9,7 @@ type Props = {
 }
 
 const DeliveryCard = ({ order, fullwidth }: Props) => {
+    const styles = fullwidth ? { margin: 0, borderRadius:0} : {marginTop:0}
     return (
         <Card containerStyle={[
 
@@ -21,7 +22,8 @@ const DeliveryCard = ({ order, fullwidth }: Props) => {
                 shadowOffset: { width: 0, height: 2 },
                 shadowOpacity: 0.2,
                 shadowRadius: 4,
-                backgroundColor: fullwidth ? '#EB6A7C' : '#59C1CC'
+                backgroundColor: fullwidth ? '#EB6A7C' : '#59C1CC',
+                ...styles
             }
         ]}>
             <View style={fullwidth && { height: '100%' }}>
